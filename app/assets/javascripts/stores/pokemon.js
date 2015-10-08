@@ -14,6 +14,12 @@
       return _pokemons.slice();
     },
 
+    find: function (id) {
+      return _pokemons.filter(function(pokemon) {
+        return pokemon.id === id;
+      })[0];
+    },
+
     addPokemonsIndexChangeListener: function (callback) {
       this.on(POKEMONS_INDEX_CHANGE_EVENT, callback);
     },
