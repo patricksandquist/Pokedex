@@ -7,8 +7,7 @@ $(document).ready(
   function (){
     var routes = (
       <Route path='/' component={Index}>
-        <IndexRoute component={PokemonsIndex}/>
-        <Route path='pokemon/:pokemonId' component={PokemonDetail}/>
+        <Route path='pokemons/:pokemonId' component={PokemonDetail}/>
       </Route>
     );
 

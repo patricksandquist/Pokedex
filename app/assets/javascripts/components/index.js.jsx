@@ -6,8 +6,10 @@
       return (
         <div>
           <div className="pokemon-index">
-            {this.props.children}
+            <PokemonsIndex/>
           </div>
+
+          {this.props.children}
         </div>
       );
     }

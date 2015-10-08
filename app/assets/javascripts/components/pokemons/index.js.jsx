@@ -23,13 +23,15 @@
 
     render: function () {
       return(
-        <ul>
-          {this.state.pokemons.map(function (poke) {
-            return <PokemonIndexItem pokemon={poke}
-                                     key={poke.id}
-                                     className="poke-list-item"/>;
-          })}
-        </ul>
+        <div>
+          <ul>
+            {this.state.pokemons.map(function (poke) {
+              return <PokemonIndexItem pokemon={poke}
+                                       key={poke.id}
+                                       className="poke-list-item"/>;
+            })}
+          </ul>          
+        </div>
       );
     }
   });

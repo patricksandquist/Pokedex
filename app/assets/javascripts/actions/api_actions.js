@@ -7,6 +7,13 @@
         actionType: PokemonConstants.POKEMONS_RECEIVED,
         pokemons: pokemons
       });
+    },
+
+    receiveSinglePokemon: function (pokemon) {
+      AppDispatcher.dispatch({
+        actionType: PokemonConstants.POKEMON_DETAIL_CHANGE_EVENT,
+        pokemon: pokemon
+      });
     }
   };
 

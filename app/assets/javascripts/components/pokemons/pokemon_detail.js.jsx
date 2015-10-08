@@ -1,26 +1,44 @@
-/* global React, PokemonsStore */
+/* global React, ApiUtil, PokemonsStore */
 
 (function(root) {
   'use strict';
   root.PokemonDetail = React.createClass({
     getStateFromStore: function () {
-      return PokemonsStore.find(parseInt(this.props.params.pokemonId));
+      var id;
+
+      if (this.props.params.pokemonId) {
+        id = this.props.params.pokemonId;
+      } else {
+        id = "1";
+      }
+
+      return PokemonsStore.find(parseInt(id));
     },
 
     getInitialState: function () {
       return {pokemon: this.getStateFromStore()};
     },
 
+    _resetDetail: function () {
+      this.setState({pokemon: this.getStateFromStore()});
+    },
+
+    componentWillReceiveProps: function () {
+      PokemonsStore.addPokemonDetailChangeListener(this._resetDetail);
+      ApiUtil.fetchSinglePokemon(this.props.params.pokemonId);
+    },
+
     render: function () {
       var poke = this.state.pokemon;
       if (poke) {
         return (
-          <div className='detail'>
-            <img src={poke.image_url}/>
-            <p>Type: {poke.type}</p>
-            <p>Attack: {poke.attack}</p>
-            <p>Defense: {poke.defense}</p>
-            <p>Moves: {poke.moves}</p>
+          <div>
+            <div className='detail'>
+              <img src={poke.image_url}/>
+              <p>Attack: {poke.attack}</p>
+              <p>Defense: {poke.defense}</p>
+              <p>Moves: {poke.moves}</p>
+            </div>
           </div>
         );
       } else {
