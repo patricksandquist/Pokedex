@@ -31,9 +31,10 @@
     render: function () {
       var poke = this.state.pokemon;
       if (poke) {
+        var klass = 'detail ' + poke.poke_type;
         return (
           <div>
-            <div className='detail'>
+            <div className={klass}>
               <img src={poke.image_url}/>
               <p>Attack: {poke.attack}</p>
               <p>Defense: {poke.defense}</p>
