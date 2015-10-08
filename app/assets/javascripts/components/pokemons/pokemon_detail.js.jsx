@@ -37,7 +37,9 @@
               <img src={poke.image_url}/>
               <p>Attack: {poke.attack}</p>
               <p>Defense: {poke.defense}</p>
-              <p>Moves: {poke.moves}</p>
+              <ul>Moves: {poke.moves.map(function (move) {
+                  return <li> * {move}</li>;
+                })}</ul>
             </div>
           </div>
         );

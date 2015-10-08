@@ -12,7 +12,7 @@
 
     render: function () {
       return (
-        <li onClick={this.showDetail}>
+        <li onClick={this.showDetail} className='poke-list-item'>
           {this.props.pokemon.name} [{this.props.pokemon.poke_type}]
         </li>
       );
