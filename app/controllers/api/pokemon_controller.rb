@@ -16,7 +16,7 @@ class Api::PokemonController < ApplicationController
   end
 
   def index
-    @pokemon = Pokemon.all
+    @pokemon = Pokemon.eager_load(:toys)
   end
 
   def show

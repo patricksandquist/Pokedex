@@ -1,4 +1,4 @@
-/* global React, ApiUtil, PokemonsStore */
+/* global React, ApiUtil, PokemonsStore, ToysIndex */
 
 (function(root) {
   'use strict';
@@ -32,6 +32,7 @@
       var poke = this.state.pokemon;
       if (poke) {
         var klass = 'detail ' + poke.poke_type;
+        // debugger
         return (
           <div>
             <div className={klass}>
@@ -42,6 +43,7 @@
                   return <li> * {move}</li>;
                 })}</ul>
             </div>
+            <ToysIndex toys={poke.toys}/>
           </div>
         );
       } else {

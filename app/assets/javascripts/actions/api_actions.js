@@ -3,6 +3,7 @@
   'use strict';
   root.ApiActions = {
     receiveAllPokemons: function (pokemons) {
+      debugger
       AppDispatcher.dispatch({
         actionType: PokemonConstants.POKEMONS_RECEIVED,
         pokemons: pokemons
