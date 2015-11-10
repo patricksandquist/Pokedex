@@ -1,6 +1,6 @@
 # Pokedex
 
-**Gotta Catch 'em All**
+**Gotta Catch 'em All!!**
 
 This project utilises the React Router to keep track of Pokemon and their toys 
 in a single page Javascript web app that is served with Rails. We have taken
