@@ -15,3 +15,6 @@ the app in a one-way-loop.
 - `ToyIndexItem`
 - `ToyDetail`
 - `PokeForm`
+
+## License
+Pokedex is released under the [MIT License](http://www.opensource.org/licenses/MIT).
